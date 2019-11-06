@@ -9,7 +9,7 @@ const Footer = () => {
             </div>
             <div className="col-md-4">
                Technology used:  <i className="fab fa-react fa-2x" /> ReactJs &amp; Redux JS, Integrated with external api
-                <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" >OMDB</a>
+                <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" >The MovieDB</a>
             </div>
 
             <div className="col-md-4">

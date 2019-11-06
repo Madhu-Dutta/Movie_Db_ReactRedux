@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 
 export class MovieCard extends Component {
     render() {
-        const {movie} = this.props;
+        const {movieParent} = this.props;
+         //Manually construct the movie path
+         movieParent.posterSrc = "https://image.tmdb.org/t/p/w185" + movieParent.poster_path
         return (
             <div className="col-md-3 mb-5">
                 <div className="card card-body bg-dark text-center h-100">
-                    {/* <img 
+                    <img 
                     className="w-100 mb-2"
-                    src={movie.results[0].poster_path}
-                    alt="movie cover"/> */}
+                    src={movieParent.posterSrc}
+                    alt="movie cover"/>
                     <h5 className="text-light card-title">
-                        MovieTitle: Year    
-                        {/* {movie.results[0].title} - {movie.results[0].release_date}  */}
+                        {movieParent.title} <br/>
+                        {movieParent.release_date}               
+
                     </h5>
                     <a className="btn btn-primary" href="#">
                         <i className="fas fa-chevron-right" />

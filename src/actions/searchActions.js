@@ -10,7 +10,7 @@ export const searchMovie = text => dispatch => {
 }
 
 export const fetchMovies = text => dispatch => {
-    Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=99aaafdc06b5dcd80ac93560ce00b201&query=&query=${text}`)
+    Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=&query=${text}`)
     .then(res => dispatch({
         type: FETCH_MOVIE,
         payload: res.data

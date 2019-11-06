@@ -7,16 +7,16 @@ export class MoviesContainer extends Component {
         //Access Movies Props
         const {movies} = this.props;
         let content = '';
-
-        //Check if the movie array length > 0 (if movie array has any movies)
-        content = movies.length > 0 ? movies.map((movie, index) => <MovieCard key={index} movie={movie} />): null;
-        return (            
-            <div className="row">
-                {content}
-                {/* <MovieCard /> */}
-            </div>
-        )
-    }
+        
+        //If page === 1. Get this info from the server respone for every api 
+        content =
+        movies.page === 1
+          ? movies.results.map((movie, index) => (
+              <MovieCard key={index} movieParent={movie} />
+            ))
+          : null;
+        return <div className="row">{content}</div>;
+    }    
 }
 const mapStateToProps = state => ({
     movies: state.movies.movies
