@@ -20,17 +20,17 @@ export class SearchForm extends Component {
                         Search Movies, TV series...
                     </h1>
                     {/* On hitting enter form gets submitted */}
-                    <form id="searchForm" onSubmit={this.onSubmit}>
+                    <form id="searchForm" onSubmit={this.onSubmit} >
                         <input 
                         type="text"
-                        className="form-control"
+                        className="form-control"                        
                         name="searchText"
                         placeholder="Search Movies, TV series..."
                         onChange={this.onChange}
                         />
                         <button 
                         type="submit"
-                        className="btn btn-primary">
+                        className="btn btn-primary" style={{margin: '3%'}}>
                             Search
                         </button>
                     </form>

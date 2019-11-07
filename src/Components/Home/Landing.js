@@ -11,7 +11,7 @@ export class Landing extends Component {
         return (          
             <div className="container">
                 <SearchForm />
-                {/* Display Spinner if loading is false or display Movies */}
+                {/* Display Spinner if loading state = false or display Movies */}
                 {loading ? <Spinner/> : <MoviesContainer/>}
             </div>
         )

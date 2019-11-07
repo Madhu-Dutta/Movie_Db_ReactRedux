@@ -2,17 +2,18 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className="site-footer">
+        
+         <div> 
             <div className="row">
-            <div className="col-md-4">
+                <div className="col-md-12">
+                   
+                <div className="footer p-3 mt-4 text-center bg-dark text-light">
                 Developed by: <span className="author">Madhu Dutta</span>
-            </div>
-            <div className="col-md-4">
-               Technology used:  <i className="fab fa-react fa-2x" /> ReactJs &amp; Redux JS, Integrated with external api
-                <a href="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" >The MovieDB</a>
-            </div>
+            
+                <span className="techUsed">Technology used:  <i className="fab fa-react fa-2x" /> ReactJs &amp; Redux JS, Integrated with external api
+                <a href="http://www.omdbapi.com/" target="_blank" rel="noopener noreferrer" >omdbapi</a>
+                </span>
 
-            <div className="col-md-4">
                 <ul className="social-links-list">
                 <span className="follow">Follow on: </span>
                     <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="twitter">
@@ -29,8 +30,10 @@ const Footer = () => {
                     </li>
                 </ul>
             </div>
+
         </div>
-    </div>
+     </div>
+  </div>
     )
 }
 

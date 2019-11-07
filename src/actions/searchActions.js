@@ -1,19 +1,41 @@
-import {SEARCH_MOVIE, FETCH_MOVIE} from './types';
-import Axios from 'axios';
-// import {APIKey} from '../APIKey';
+import { SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING } from './types';
+import axios from 'axios';
+
+import { APIKey } from '../APIKey';
 
 export const searchMovie = text => dispatch => {
-    dispatch({
-        type: SEARCH_MOVIE,
-        payload: text
-    })
-}
+  dispatch({
+    type: SEARCH_MOVIE,
+    payload: text
+  });
+};
 
 export const fetchMovies = text => dispatch => {
-    Axios.get(`https://api.themoviedb.org/3/search/movie?api_key=1b5adf76a72a13bad99b8fc0c68cb085&query=&query=${text}`)
-    .then(res => dispatch({
-        type: FETCH_MOVIE,
-        payload: res.data
-    }))
+  axios
+    .get(`https://www.omdbapi.com/?apikey=${APIKey}&s=${text}`)
+    .then(response =>
+      dispatch({
+        type: FETCH_MOVIES,
+        payload: response.data
+      })
+    )
     .catch(err => console.log(err));
-}
+};
+
+export const fetchMovie = id => dispatch => {
+  axios
+    .get(`https://www.omdbapi.com/?apikey=${APIKey}&i=${id}`)
+    .then(response =>
+      dispatch({
+        type: FETCH_MOVIE,
+        payload: response.data
+      })
+    )
+    .catch(err => console.log(err));
+};
+
+export const setLoading = () => {
+  return {
+    type: LOADING
+  };
+};
