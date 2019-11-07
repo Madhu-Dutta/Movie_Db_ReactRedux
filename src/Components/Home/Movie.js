@@ -64,16 +64,16 @@ export class Movie extends Component {
                         {movie.Plot}                        
                         <hr />
 
-                        <Link
-                            href="https://www.imdb.com/title/' + movie.imdbID"
+                        <a
+                            href={'https://www.imdb.com/title/' + movie.imdbID}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="btn btn-primary"
                         >
                             View on IMDB
-                        </Link>
+                        </a>
                         <Link
-                            href="#"
+                            to="/"
                             className="btn btn-default text-light"
                         >
                             Go Back to Search
