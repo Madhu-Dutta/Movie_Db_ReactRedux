@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchMovie} from '../../actions/searchActions';
+import {fetchMovie, setLoading} from '../../actions/searchActions';
 import Spinner from '../Layout/Spinner';
 
 export class Movie extends Component {
     componentDidMount() {
-        this.props.fetchMovie(this.props.match.params.id);      
+        this.props.fetchMovie(this.props.match.params.id);     
+        this.props.setLoading();
       }
     render() {
         const { loading, movie } = this.props;
@@ -90,4 +91,4 @@ const mapStateToProps = state => ({
     loading: state.movies.loading,
     movie: state.movies.movie
 })
-export default connect(mapStateToProps, {fetchMovie})(Movie);
+export default connect(mapStateToProps, {fetchMovie, setLoading})(Movie);

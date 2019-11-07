@@ -1,5 +1,5 @@
 //Search reducer is the main or initial reducer
-import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE} from '../actions/types';
+import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING} from '../actions/types';
 
 const initialState = {
     text: '',
@@ -27,6 +27,11 @@ export default function(state = initialState, action){
                 ...state,
                 movie: action.payload,
                 loading: false
+            }
+            case LOADING:
+            return{
+                ...state,
+                loading: true
             }
             default: 
                 return state;
